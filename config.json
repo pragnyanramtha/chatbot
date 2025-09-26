@@ -1,6 +1,6 @@
 {
     "$schema": "./knowledge-schema.json",
-    "title": "hahhahahahah",
+    "title": "your title (change this in config.json)",
     "description": "A short description",
     "entries": [
         {
