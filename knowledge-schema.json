@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/knowledge-base.schema.json",
+  "title": "Knowledge Base",
+  "description": "Schema for chatbot knowledge base configuration",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Application title"
+    },
+    "description": {
+      "type": "string", 
+      "description": "Application description"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the knowledge entry"
+          },
+          "key": {
+            "type": "string",
+            "description": "Title or topic of the knowledge entry"
+          },
+          "value": {
+            "type": "string",
+            "description": "Detailed information content"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Searchable tags for the entry"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update timestamp"
+          }
+        },
+        "required": ["id", "key", "value", "tags", "createdAt", "updatedAt"]
+      }
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp for the entire knowledge base"
+    }
+  },
+  "required": ["entries", "lastUpdated"]
+}
